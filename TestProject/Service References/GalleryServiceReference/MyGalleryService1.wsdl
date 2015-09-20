@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IMyGalleryProvider_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:7219/MyGalleryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:7219/MyGalleryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:7219/MyGalleryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Model" />
+      <xsd:import schemaLocation="http://localhost:7219/MyGalleryService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMyGalleryProvider_ShowAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ShowAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ShowPublicAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowPublicAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ShowPublicAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowPublicAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ShowGallery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowGallery" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ShowGallery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowGalleryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ShowOnlyPublic_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowOnlyPublic" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ShowOnlyPublic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowOnlyPublicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_CreateAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_CreateAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_GetPhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhoto" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_GetPhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_GetThumbnail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThumbnail" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_GetThumbnail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThumbnailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ImageUpload_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImageUpload" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ImageUpload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImageUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_DeleteAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_DeleteAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_DeletePhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhoto" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_DeletePhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_PublishAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:PublishAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_PublishAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublishAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_UnPublishAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnPublishAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_UnPublishAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnPublishAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ActivateAcc_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateAcc" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_ActivateAcc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateAccResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_GenerateAndInsertThumbnail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAndInsertThumbnail" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_GenerateAndInsertThumbnail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAndInsertThumbnailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_PhotosWithoutThumb_InputMessage">
+    <wsdl:part name="parameters" element="tns:PhotosWithoutThumb" />
+  </wsdl:message>
+  <wsdl:message name="IMyGalleryProvider_PhotosWithoutThumb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PhotosWithoutThumbResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMyGalleryProvider">
+    <wsdl:operation name="ShowAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/ShowAlbum" message="tns:IMyGalleryProvider_ShowAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/ShowAlbumResponse" message="tns:IMyGalleryProvider_ShowAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowPublicAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/ShowPublicAlbum" message="tns:IMyGalleryProvider_ShowPublicAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/ShowPublicAlbumResponse" message="tns:IMyGalleryProvider_ShowPublicAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowGallery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/ShowGallery" message="tns:IMyGalleryProvider_ShowGallery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/ShowGalleryResponse" message="tns:IMyGalleryProvider_ShowGallery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowOnlyPublic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/ShowOnlyPublic" message="tns:IMyGalleryProvider_ShowOnlyPublic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/ShowOnlyPublicResponse" message="tns:IMyGalleryProvider_ShowOnlyPublic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/CreateAlbum" message="tns:IMyGalleryProvider_CreateAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/CreateAlbumResponse" message="tns:IMyGalleryProvider_CreateAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/GetPhoto" message="tns:IMyGalleryProvider_GetPhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/GetPhotoResponse" message="tns:IMyGalleryProvider_GetPhoto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThumbnail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/GetThumbnail" message="tns:IMyGalleryProvider_GetThumbnail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/GetThumbnailResponse" message="tns:IMyGalleryProvider_GetThumbnail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImageUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/ImageUpload" message="tns:IMyGalleryProvider_ImageUpload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/ImageUploadResponse" message="tns:IMyGalleryProvider_ImageUpload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/DeleteAlbum" message="tns:IMyGalleryProvider_DeleteAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/DeleteAlbumResponse" message="tns:IMyGalleryProvider_DeleteAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/DeletePhoto" message="tns:IMyGalleryProvider_DeletePhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/DeletePhotoResponse" message="tns:IMyGalleryProvider_DeletePhoto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/PublishAlbum" message="tns:IMyGalleryProvider_PublishAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/PublishAlbumResponse" message="tns:IMyGalleryProvider_PublishAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnPublishAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/UnPublishAlbum" message="tns:IMyGalleryProvider_UnPublishAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/UnPublishAlbumResponse" message="tns:IMyGalleryProvider_UnPublishAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateAcc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/ActivateAcc" message="tns:IMyGalleryProvider_ActivateAcc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/ActivateAccResponse" message="tns:IMyGalleryProvider_ActivateAcc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAndInsertThumbnail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/GenerateAndInsertThumbnail" message="tns:IMyGalleryProvider_GenerateAndInsertThumbnail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/GenerateAndInsertThumbnailResponse" message="tns:IMyGalleryProvider_GenerateAndInsertThumbnail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PhotosWithoutThumb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyGalleryProvider/PhotosWithoutThumb" message="tns:IMyGalleryProvider_PhotosWithoutThumb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyGalleryProvider/PhotosWithoutThumbResponse" message="tns:IMyGalleryProvider_PhotosWithoutThumb_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IMyGalleryProvider" type="tns:IMyGalleryProvider">
+    <wsp:PolicyReference URI="#WSHttpBinding_IMyGalleryProvider_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ShowAlbum">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/ShowAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowPublicAlbum">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/ShowPublicAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowGallery">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/ShowGallery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowOnlyPublic">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/ShowOnlyPublic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAlbum">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/CreateAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhoto">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/GetPhoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThumbnail">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/GetThumbnail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImageUpload">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/ImageUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlbum">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/DeleteAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoto">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/DeletePhoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishAlbum">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/PublishAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnPublishAlbum">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/UnPublishAlbum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateAcc">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/ActivateAcc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAndInsertThumbnail">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/GenerateAndInsertThumbnail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PhotosWithoutThumb">
+      <soap12:operation soapAction="http://tempuri.org/IMyGalleryProvider/PhotosWithoutThumb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

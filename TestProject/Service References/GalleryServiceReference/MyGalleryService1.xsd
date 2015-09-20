@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:7219/MyGalleryService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:complexType name="ArrayOfPhoto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Photo" nillable="true" type="tns:Photo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhoto" nillable="true" type="tns:ArrayOfPhoto" />
+  <xs:complexType name="Photo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlbumID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ContentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhotoByte" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PhotoID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Thumbnail" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Photo" nillable="true" type="tns:Photo" />
+  <xs:complexType name="ArrayOfAlbum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Album" nillable="true" type="tns:Album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlbum" nillable="true" type="tns:ArrayOfAlbum" />
+  <xs:complexType name="Album">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlbumID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AlbumName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPublished" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Album" nillable="true" type="tns:Album" />
+  <xs:complexType name="UploadImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="albumID" type="xs:int" />
+      <xs:element minOccurs="0" name="contenttype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ext" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="imageDescrp" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="sizeOfThumnail" type="q1:Size" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadImage" nillable="true" type="tns:UploadImage" />
+</xs:schema>

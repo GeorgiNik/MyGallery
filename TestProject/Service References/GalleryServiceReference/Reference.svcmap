@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e9fd4891-4dd4-4b25-a530-5687f25c8fec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:7219/MyGalleryService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MyGalleryService.xsd" MetadataType="Schema" ID="61c69b16-943d-4550-97b9-3dab898c6b84" SourceId="1" SourceUrl="http://localhost:7219/MyGalleryService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MyGalleryService.disco" MetadataType="Disco" ID="06e49d75-306a-4566-a954-f544c21a10a2" SourceId="1" SourceUrl="http://localhost:7219/MyGalleryService.svc?disco" />
+    <MetadataFile FileName="MyGalleryService3.xsd" MetadataType="Schema" ID="f92325c9-e432-4514-aa0f-b955ad78953d" SourceId="1" SourceUrl="http://localhost:7219/MyGalleryService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MyGalleryService1.wsdl" MetadataType="Wsdl" ID="c2b1db63-e3eb-41ec-bf30-ac3a3d8a8866" SourceId="1" SourceUrl="http://localhost:7219/MyGalleryService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="MyGalleryService1.xsd" MetadataType="Schema" ID="111873f4-a386-475d-9706-b4a68e634c88" SourceId="1" SourceUrl="http://localhost:7219/MyGalleryService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MyGalleryService2.xsd" MetadataType="Schema" ID="84dbcb9d-f92c-4c66-ab75-6019a44fd57e" SourceId="1" SourceUrl="http://localhost:7219/MyGalleryService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MyGalleryService.wsdl" MetadataType="Wsdl" ID="14bfa654-3602-43f4-b0ec-b103b91528c9" SourceId="1" SourceUrl="http://localhost:7219/MyGalleryService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

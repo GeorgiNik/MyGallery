@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="configuration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="configSections">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="section">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                  <xs:attribute name="type" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MyGalleryProvider">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="App_Code">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="add">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                        <xs:attribute name="type" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="default" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="connectionStrings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="add">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                  <xs:attribute name="connectionString" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="system.net">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mailSettings">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="smtp">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="network">
+                            <xs:complexType>
+                              <xs:attribute name="host" type="xs:string" use="required" />
+                              <xs:attribute name="defaultCredentials" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="deliveryMethod" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="system.web">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="compilation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="assemblies">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="add">
+                            <xs:complexType>
+                              <xs:attribute name="assembly" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="debug" type="xs:boolean" use="required" />
+                  <xs:attribute name="targetFramework" type="xs:decimal" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="httpRuntime">
+                <xs:complexType>
+                  <xs:attribute name="targetFramework" type="xs:decimal" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="membership">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="App_Code">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="add">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                              <xs:attribute name="type" type="xs:string" use="required" />
+                              <xs:attribute name="connectioStringName" type="xs:string" use="required" />
+                              <xs:attribute name="passwordFormat" type="xs:string" use="required" />
+                              <xs:attribute name="enablePasswordRetrieval" type="xs:boolean" use="required" />
+                              <xs:attribute name="enablePasswordReset" type="xs:boolean" use="required" />
+                              <xs:attribute name="requiresQuestionAndAnswer" type="xs:boolean" use="required" />
+                              <xs:attribute name="maxInvalidPasswordAttempts" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="minRequiredPasswordLength" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="minRequiredNonalphanumericCharacters" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="passwordAttemptWindow" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="requiresUniqueEmail" type="xs:boolean" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="defaultProvider" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="roleManager">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="App_Code">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="add">
+                            <xs:complexType>
+                              <xs:attribute name="connectionStringName" type="xs:string" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                              <xs:attribute name="type" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="authentication">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="forms">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="loginUrl" type="xs:string" use="required" />
+                            <xs:attribute name="defaultUrl" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="mode" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="authorization">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="allow">
+                      <xs:complexType>
+                        <xs:attribute name="users" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="appSettings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="add">
+                <xs:complexType>
+                  <xs:attribute name="key" type="xs:string" use="required" />
+                  <xs:attribute name="value" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

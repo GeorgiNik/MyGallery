@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="TestProject.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        h3 {
+            margin: 0px;
+            padding: 0px;
+        }
+        h5 {
+            margin: 0px;
+            padding: 0px;
+        }
+        .header {
+            background-color: #4071D4;
+            height: 180px;
+        }
+
+            .header h1 {
+                color: white;
+                font-size: 100px;
+                font-family: 'Comic Sans MS';
+                float: left;
+                margin:10px;
+            }
+
+        .loginStat {
+            display:block;
+            float: right;
+            font-size: 30px;
+            text-decoration: none;
+            margin:10px;
+            margin-top:70px;
+            font-weight:bold;
+            font-family:Arial
+            
+        }
+
+
+        .footer {
+            background-color: #4071D4;
+            height: 75px;
+        }
+        .menu {
+            background-color: #37A0E7;
+            font-family: 'Comic Sans MS';
+            font-size: 30px;
+            text-decoration: none;
+            color: white;
+            
+
+            
+        }
+        .content {
+            margin: 50px 10px ;
+        }
+
+        .thumbnail {
+            width: 200px;
+            height: 200px;
+        }
+        
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+            <header>
+                <div class="header">
+                    <h1>My Gallery</h1>
+                    
+                    
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="loginStat" ForeColor="White"  LogoutText="Log out"  OnLoggedOut="LoginStatus1_LoggedOut" />
+                    <asp:Button ID="btnRegister" runat="server" Text="Register"  OnClick="Button1_Click" CssClass="loginStat" ForeColor="White" BackColor="Transparent" BorderStyle="None" Font-Bold="false"/>
+                    <asp:LoginName ID="LoginName1" runat="server" CssClass="loginStat" ForeColor="White" FormatString="{0}:" />
+                </div>
+                <div class="menu">
+                 <%--<asp:SiteMapPath ID="SiteMapPath1" runat="server" CurrentNodeStyle-ForeColor="White" NodeStyle-Font-Underline="false" RootNodeStyle-ForeColor="Black"  NodeStyle-ForeColor="Black" PathSeparatorStyle-ForeColor="Blue"></asp:SiteMapPath>--%>
+                    <asp:Menu ID="Menu1" runat="server" style="margin-right: 57px" Orientation="Horizontal" CssClass="menu"  StaticMenuItemStyle-HorizontalPadding="20px" >
+                        
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Content/Gallery.aspx" Text="My Gallery" Value="My Gallery"></asp:MenuItem>
+                            
+                        </Items>
+                    </asp:Menu>
+                    </div>
+            </header>
+            <div class="content">
+                
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                </asp:ContentPlaceHolder>
+            </div>
+            <footer>
+                <div class="footer">
+                </div>
+            </footer>
+        
+
+    </form>
+</body>
+
+</html>
