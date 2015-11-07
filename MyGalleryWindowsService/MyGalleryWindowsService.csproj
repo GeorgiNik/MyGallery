@@ -40,7 +40,6 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
@@ -86,10 +85,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GalleryService\GalleryService.csproj">
-      <Project>{32297e50-e09f-4d3c-abcd-7c1a96f01307}</Project>
-      <Name>GalleryService</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{0cf0ccd8-d4ad-44ab-b62e-57b5567f4e0e}</Project>
       <Name>Model</Name>

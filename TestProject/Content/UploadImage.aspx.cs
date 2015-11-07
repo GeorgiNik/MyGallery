@@ -1,14 +1,9 @@
-﻿using System;
-using System.Web;
-using System.Web.UI;
-using System.IO;
-using TestProject.App_Code;
-using System.Collections.Generic;
-using System.ServiceProcess;
-using System.Drawing;
-
-namespace TestProject
+﻿namespace TestProject.Content
 {
+    using System;
+    using System.IO;
+    using System.Web;
+
     /// <summary>
     /// Upload image page
     /// </summary>
@@ -17,25 +12,25 @@ namespace TestProject
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-                ViewState["ReferringURL"] = Request.UrlReferrer;
+            if (!this.Page.IsPostBack)
+                this.ViewState["ReferringURL"] = this.Request.UrlReferrer;
             
 
         }
 
         protected void UploadButton_Click(object sender, EventArgs e)
         {
-            string filePath = FileUpload1.PostedFile.FileName;
+            string filePath = this.FileUpload1.PostedFile.FileName;
 
             string filename = Path.GetFileName(filePath);
-            string imageDiscr = ImageDescriptionTxt.Text.Trim();
+            string imageDiscr = this.ImageDescriptionTxt.Text.Trim();
             string ext = Path.GetExtension(filename);
             string contenttype = String.Empty;
-            int albumID = Convert.ToInt32(Request.QueryString["AlbumID"]);
+            int albumID = Convert.ToInt32(this.Request.QueryString["AlbumID"]);
             string userName = HttpContext.Current.User.Identity.Name;
             
             bool isUploaded = false;
-            foreach (var file in FileUpload1.PostedFiles)
+            foreach (var file in this.FileUpload1.PostedFiles)
             {
                 Stream fileStream = file.InputStream;
                 var memoryStream = new MemoryStream();
@@ -64,24 +59,24 @@ namespace TestProject
             
             if (isUploaded)
             {
-                lblMessage.ForeColor = System.Drawing.Color.Green;
-                lblMessage.Text = "File Uploaded Successfully";
-                lblMessage.Visible = true;
+                this.lblMessage.ForeColor = System.Drawing.Color.Green;
+                this.lblMessage.Text = "File Uploaded Successfully";
+                this.lblMessage.Visible = true;
             }
 
             else
             {
-                lblMessage.ForeColor = System.Drawing.Color.Red;
-                lblMessage.Text = "Failed";
-                lblMessage.Visible = true;
+                this.lblMessage.ForeColor = System.Drawing.Color.Red;
+                this.lblMessage.Text = "Failed";
+                this.lblMessage.Visible = true;
             }
 
         }
 
         protected void Redirect_Click(object sender, EventArgs e)
         {
-            if (ViewState["ReferringURL"] != null)
-                Response.Redirect(ViewState["ReferringURL"].ToString());
+            if (this.ViewState["ReferringURL"] != null)
+                this.Response.Redirect(this.ViewState["ReferringURL"].ToString());
 
         }
 

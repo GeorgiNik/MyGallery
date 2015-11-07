@@ -6,8 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TestProject.App_Code;
-using TestProject.GalleryServiceReference;
 
 namespace TestProject.Content
 {

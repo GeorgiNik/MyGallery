@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-
-namespace TestProject.App_Code
+﻿namespace TestProject
 {
+    using System.Configuration;
+
     public class ProviderFeatureSection : System.Configuration.ConfigurationSection
     {
         private readonly ConfigurationProperty defaultProvider = new ConfigurationProperty("defaultProvider", typeof(string), null);
@@ -13,23 +9,23 @@ namespace TestProject.App_Code
         private ConfigurationPropertyCollection properties = new ConfigurationPropertyCollection();
         public ProviderFeatureSection()
         {
-            properties.Add(providers);
-            properties.Add(defaultProvider);
+            this.properties.Add(this.providers);
+            this.properties.Add(this.defaultProvider);
         }
         [ConfigurationProperty("defaultProvider")]
         public string DefaultProvider
         {
-            get { return (string)base[defaultProvider]; }
-            set { base[defaultProvider] = value; }
+            get { return (string)base[this.defaultProvider]; }
+            set { base[this.defaultProvider] = value; }
         }
         [ConfigurationProperty("providers")]
         public ProviderSettingsCollection Providers
         {
-            get { return (ProviderSettingsCollection)base[providers]; }
+            get { return (ProviderSettingsCollection)base[this.providers]; }
         }
         protected override ConfigurationPropertyCollection Properties
         {
-            get { return properties; }
+            get { return this.properties; }
         }
     }
 }

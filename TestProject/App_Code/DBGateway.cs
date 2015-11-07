@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using TestProject.Content;
-
-
-namespace TestProject.App_Code
+﻿namespace TestProject
 {
+    using TestProject.Content;
+
     public static class DBGateway
     {
         /// <summary>

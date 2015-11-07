@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using TestProject.App_Code;
+
 using TestProject.Content;
-using TestProject.GalleryServiceReference;
 
 namespace TestProject
 {

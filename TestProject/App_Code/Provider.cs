@@ -1,15 +1,13 @@
-﻿using Model;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Drawing;
-using System.Linq;
-using System.Web;
-using System.Web.Configuration;
-
-
-namespace TestProject.App_Code
+﻿namespace TestProject
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Drawing;
+    using System.Web.Configuration;
+
+    using Model;
+
     public class Provider
     {
 

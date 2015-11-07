@@ -1,15 +1,12 @@
-﻿using Model;
-using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Configuration;
-using System.Configuration.Provider;
-using System.Drawing;
-using System.Web.Configuration;
-using TestProject.App_Code.Interfaces;
-
-namespace TestProject.App_Code
+﻿namespace TestProject
 {
+    using System.Collections.Generic;
+    using System.Drawing;
+
+    using Model;
+
+    using TestProject.Interfaces;
+
     public abstract class MyGalleryProvider : System.Configuration.Provider.ProviderBase, IMyGalleryProvider
     {
         public abstract List<Photo> ShowAlbum(int albumID, string userName);

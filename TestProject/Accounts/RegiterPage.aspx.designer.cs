@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestProject {
+namespace TestProject.Accounts {
     
     
     public partial class RegiterPage {

@@ -2,7 +2,6 @@
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TestProject.App_Code;
 
 namespace TestProject.Content
 {

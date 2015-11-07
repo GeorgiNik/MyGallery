@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using TestProject;
-using Model;
-namespace TestProject
+﻿namespace TestProject.Accounts
 {
+    using System;
+    using System.Web.Security;
+
     /// <summary>
     /// Login Page
     /// </summary>
@@ -23,8 +17,8 @@ namespace TestProject
         {
 
             var user = new Model.UserInfo();
-            user.UserName = UserField.Text.Trim();
-            user.Password = PassField.Text.Trim();
+            user.UserName = this.UserField.Text.Trim();
+            user.Password = this.PassField.Text.Trim();
 
             if (Membership.ValidateUser(user.UserName, user.Password))
             {
@@ -34,7 +28,7 @@ namespace TestProject
             }
             else
             {
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + "Invalid username or password" + "');", true);
+                this.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + "Invalid username or password" + "');", true);
 
             }
 
@@ -42,12 +36,12 @@ namespace TestProject
 
         protected void RememberCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            FormsAuthentication.SetAuthCookie(UserField.Text, true);
+            FormsAuthentication.SetAuthCookie(this.UserField.Text, true);
         }
 
         protected void RegisterRedirect_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Accounts/RegiterPage.aspx");
+            this.Response.Redirect("~/Accounts/RegiterPage.aspx");
         }
     }
 }

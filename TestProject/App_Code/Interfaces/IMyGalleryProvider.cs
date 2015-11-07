@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Model;
-using System.IO;
-using System.ServiceModel;
-using System.Drawing;
-
-namespace TestProject.App_Code.Interfaces
+﻿namespace TestProject.Interfaces
 {
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.ServiceModel;
+
+    using Model;
+
     /// <summary>
     /// The main interface for Providers
     /// </summary>

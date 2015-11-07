@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Model;
-using System.Drawing;
-
-namespace TestProject.App_Code
+﻿namespace TestProject
 {
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Linq;
+
+    using Model;
+
+    using TestProject.Service_References.GalleryServiceReference;
+
     public class MyGalleryWcfProvider:MyGalleryProvider
     {
 
-        GalleryServiceReference.MyGalleryProviderClient client;
+        MyGalleryProviderClient client;
 
         private static MyGalleryWcfProvider _Instance;
 
@@ -33,105 +34,105 @@ namespace TestProject.App_Code
         #region Public Metods
         public override List<Photo> ShowAlbum(int albumID, string userName)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.ShowAlbum(albumID, userName).ToList();
+                return this.client.ShowAlbum(albumID, userName).ToList();
             }
         }
 
         public override List<Photo> ShowPublicAlbum(int albumID)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.ShowPublicAlbum(albumID).ToList();
+                return this.client.ShowPublicAlbum(albumID).ToList();
             }
         }
 
         public override List<Album> ShowGallery(string userName)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.ShowGallery(userName).ToList();
+                return this.client.ShowGallery(userName).ToList();
             }
         }
 
         public override List<Album> ShowOnlyPublic()
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.ShowOnlyPublic().ToList();
+                return this.client.ShowOnlyPublic().ToList();
             }
         }
 
         public override bool CreateAlbum(string album, string description, string userName)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.CreateAlbum(album, description, userName);
+                return this.client.CreateAlbum(album, description, userName);
             }
         }
 
         public override byte[] GetPhoto(int photoID)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.GetPhoto(photoID);
+                return this.client.GetPhoto(photoID);
             }
         }
 
         public override byte[] GetThumbnail(int albumID, int photoID)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.GetThumbnail(albumID, photoID);
+                return this.client.GetThumbnail(albumID, photoID);
             }
         }
 
         public override bool ImageUpload(Model.UploadImage imageDetails)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.ImageUpload(imageDetails);
+                return this.client.ImageUpload(imageDetails);
             }
         }
 
         public override bool DeleteAlbum(int albumID)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.DeleteAlbum(albumID);
+                return this.client.DeleteAlbum(albumID);
             }
         }
 
         public override bool DeletePhoto(int photoID)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.DeletePhoto(photoID);
+                return this.client.DeletePhoto(photoID);
             }
         }
 
         public override bool PublishAlbum(int albumID)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.PublishAlbum(albumID);
+                return this.client.PublishAlbum(albumID);
             }
         }
 
         public override bool UnPublishAlbum(int albumID)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.UnPublishAlbum(albumID);
+                return this.client.UnPublishAlbum(albumID);
             }
         }
 
         public override int ActivateAcc(string activationGuid)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.ActivateAcc(activationGuid);
+                return this.client.ActivateAcc(activationGuid);
             }
         }
 
@@ -139,9 +140,9 @@ namespace TestProject.App_Code
 
         public override void GenerateAndInsertThumbnail(Photo photo, Size thumbSize)
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                client.GenerateAndInsertThumbnail(photo, thumbSize);
+                this.client.GenerateAndInsertThumbnail(photo, thumbSize);
             }
         }
 
@@ -149,9 +150,9 @@ namespace TestProject.App_Code
 
         public override List<Photo> PhotosWithoutThumb()
         {
-            using (client = new GalleryServiceReference.MyGalleryProviderClient())
+            using (this.client = new MyGalleryProviderClient())
             {
-                return client.PhotosWithoutThumb().ToList();
+                return this.client.PhotosWithoutThumb().ToList();
             }
         } 
         #endregion

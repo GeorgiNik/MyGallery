@@ -7,13 +7,15 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using TestProject.Content;
-using TestProject.App_Code;
+
 using System.ServiceModel.Activation;
-using TestProject.App_Code.Interfaces;
 using System.Security.Permissions;
 
 namespace GalleryService
 {
+    using TestProject;
+    using TestProject.Interfaces;
+
     /// <summary>
     /// Wcf service that works with Database
     /// </summary>

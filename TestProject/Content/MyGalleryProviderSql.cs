@@ -5,14 +5,11 @@ using System.Configuration;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
-using Ionic.Zip;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Drawing;
 using System.Collections.Generic;
 using Model;
-using TestProject.App_Code.Interfaces;
-using TestProject.App_Code;
 
 namespace TestProject.Content
 {

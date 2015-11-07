@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
-using System.Configuration;
-using System.Data.SqlClient;
-using TestProject.App_Code;
-
-namespace TestProject
+﻿namespace TestProject.Accounts
 {
+    using System;
+
     /// <summary>
     /// Activation Page
     /// </summary>
@@ -21,16 +12,16 @@ namespace TestProject
             if (!this.IsPostBack)
             {
                 
-                string activationCode = !string.IsNullOrEmpty(Request.QueryString["ActivationCode"]) ? Request.QueryString["ActivationCode"] : Guid.Empty.ToString();
+                string activationCode = !string.IsNullOrEmpty(this.Request.QueryString["ActivationCode"]) ? this.Request.QueryString["ActivationCode"] : Guid.Empty.ToString();
                 var rowsAffected = Provider.ActivateAcc(activationCode);
 
                 if (rowsAffected == 1)
                 {
-                    ltMessage.Text = "Activation successful.";
+                    this.ltMessage.Text = "Activation successful.";
                 }
                 else
                 {
-                    ltMessage.Text = "Invalid Activation code.";
+                    this.ltMessage.Text = "Invalid Activation code.";
                 }
             }
         }

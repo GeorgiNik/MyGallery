@@ -1,23 +1,14 @@
-﻿using System.Web.Security;
-using System.Configuration.Provider;
-using System.Collections.Specialized;
-using System;
-using System.Data;
-using System.Data.Odbc;
-using System.Configuration;
-using System.Diagnostics;
-using System.Web;
-using System.Globalization;
-using System.Security.Cryptography;
-using System.Text;
-using System.Web.Configuration;
-using System.Data.SqlClient;
-using System.Net.Mail;
-
-
-
-namespace TestProject.App_Code
+﻿namespace TestProject
 {
+    using System;
+    using System.Collections.Specialized;
+    using System.Configuration;
+    using System.Configuration.Provider;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Net.Mail;
+    using System.Web.Security;
+
     public class MyMembershipProvider : MembershipProvider
     {
 
@@ -52,25 +43,25 @@ namespace TestProject.App_Code
 
             base.Initialize(name, config);
 
-            pMaxInvalidPasswordAttempts = Convert.ToInt32(GetConfigValue(config["maxInvalidPasswordAttempts"], "5"));
-            pPasswordAttemptWindow = Convert.ToInt32(GetConfigValue(config["passwordAttemptWindow"], "10"));
-            pEnablePasswordReset = Convert.ToBoolean(GetConfigValue(config["enablePasswordReset"], "true"));
-            pEnablePasswordRetrieval = Convert.ToBoolean(GetConfigValue(config["enablePasswordRetrieval"], "true"));
-            pRequiresQuestionAndAnswer = Convert.ToBoolean(GetConfigValue(config["requiresQuestionAndAnswer"], "false"));
-            pRequiresUniqueEmail = Convert.ToBoolean(GetConfigValue(config["requiresUniqueEmail"], "true"));
-            pMinLenght = Convert.ToInt32(GetConfigValue(config["minRequiredPasswordLength"], "6"));
+            this.pMaxInvalidPasswordAttempts = Convert.ToInt32(this.GetConfigValue(config["maxInvalidPasswordAttempts"], "5"));
+            this.pPasswordAttemptWindow = Convert.ToInt32(this.GetConfigValue(config["passwordAttemptWindow"], "10"));
+            this.pEnablePasswordReset = Convert.ToBoolean(this.GetConfigValue(config["enablePasswordReset"], "true"));
+            this.pEnablePasswordRetrieval = Convert.ToBoolean(this.GetConfigValue(config["enablePasswordRetrieval"], "true"));
+            this.pRequiresQuestionAndAnswer = Convert.ToBoolean(this.GetConfigValue(config["requiresQuestionAndAnswer"], "false"));
+            this.pRequiresUniqueEmail = Convert.ToBoolean(this.GetConfigValue(config["requiresUniqueEmail"], "true"));
+            this.pMinLenght = Convert.ToInt32(this.GetConfigValue(config["minRequiredPasswordLength"], "6"));
             string temp_format = config["passwordFormat"];
 
             switch (temp_format)
             {
                 case "Hashed":
-                    pPasswordFormat = MembershipPasswordFormat.Hashed;
+                    this.pPasswordFormat = MembershipPasswordFormat.Hashed;
                     break;
                 case "Encrypted":
-                    pPasswordFormat = MembershipPasswordFormat.Encrypted;
+                    this.pPasswordFormat = MembershipPasswordFormat.Encrypted;
                     break;
                 case "Clear":
-                    pPasswordFormat = MembershipPasswordFormat.Clear;
+                    this.pPasswordFormat = MembershipPasswordFormat.Clear;
                     break;
                 default:
                     throw new ProviderException("Password format not supported.");
@@ -95,12 +86,12 @@ namespace TestProject.App_Code
 
         public override bool EnablePasswordReset
         {
-            get { return pEnablePasswordReset; }
+            get { return this.pEnablePasswordReset; }
         }
 
         public override bool EnablePasswordRetrieval
         {
-            get { return pEnablePasswordRetrieval; }
+            get { return this.pEnablePasswordRetrieval; }
         }
 
         public override MembershipUserCollection FindUsersByEmail(string emailToMatch, int pageIndex, int pageSize, out int totalRecords)
@@ -145,7 +136,7 @@ namespace TestProject.App_Code
 
         public override int MaxInvalidPasswordAttempts
         {
-            get { return pMaxInvalidPasswordAttempts; }
+            get { return this.pMaxInvalidPasswordAttempts; }
         }
 
         public override int MinRequiredNonAlphanumericCharacters
@@ -155,17 +146,17 @@ namespace TestProject.App_Code
 
         public override int MinRequiredPasswordLength
         {
-            get { return pMinLenght; }
+            get { return this.pMinLenght; }
         }
 
         public override int PasswordAttemptWindow
         {
-            get { return pPasswordAttemptWindow; }
+            get { return this.pPasswordAttemptWindow; }
         }
 
         public override MembershipPasswordFormat PasswordFormat
         {
-            get { return pPasswordFormat; }
+            get { return this.pPasswordFormat; }
         }
 
         public override string PasswordStrengthRegularExpression
@@ -175,12 +166,12 @@ namespace TestProject.App_Code
 
         public override bool RequiresQuestionAndAnswer
         {
-            get { return pRequiresQuestionAndAnswer; }
+            get { return this.pRequiresQuestionAndAnswer; }
         }
 
         public override bool RequiresUniqueEmail
         {
-            get { return pRequiresUniqueEmail; }
+            get { return this.pRequiresUniqueEmail; }
         }
 
         public override string ResetPassword(string username, string answer)
@@ -266,7 +257,7 @@ namespace TestProject.App_Code
                 else
                 {
                     status = MembershipCreateStatus.Success;
-                    SendActivationEmail(userId, username, email);
+                    this.SendActivationEmail(userId, username, email);
 
                 }
 

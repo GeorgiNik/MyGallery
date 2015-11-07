@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration.Provider;
-using System.Linq;
-using System.Text;
-
-namespace TestProject.App_Code
+﻿namespace TestProject
 {
+    using System;
+    using System.Configuration.Provider;
+
     public class ProviderList : ProviderCollection
     {
         public override void Add(ProviderBase provider)

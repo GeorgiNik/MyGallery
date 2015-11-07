@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestProject.GalleryServiceReference {
+namespace TestProject.Service_References.GalleryServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -107,12 +107,12 @@ namespace TestProject.GalleryServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMyGalleryProviderChannel : TestProject.GalleryServiceReference.IMyGalleryProvider, System.ServiceModel.IClientChannel {
+    public interface IMyGalleryProviderChannel : IMyGalleryProvider, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MyGalleryProviderClient : System.ServiceModel.ClientBase<TestProject.GalleryServiceReference.IMyGalleryProvider>, TestProject.GalleryServiceReference.IMyGalleryProvider {
+    public partial class MyGalleryProviderClient : System.ServiceModel.ClientBase<IMyGalleryProvider>, IMyGalleryProvider {
         
         public MyGalleryProviderClient() {
         }

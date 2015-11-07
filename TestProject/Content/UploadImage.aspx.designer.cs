@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestProject {
+namespace TestProject.Content {
     
     
     public partial class UploadImage {

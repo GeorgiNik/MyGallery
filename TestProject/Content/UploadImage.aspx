@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadImage.aspx.cs" Inherits="TestProject.UploadImage" MasterPageFile="~/MasterPage.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadImage.aspx.cs" Inherits="TestProject.Content.UploadImage" MasterPageFile="~/MasterPage.Master" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="head">
     <style type="text/css">

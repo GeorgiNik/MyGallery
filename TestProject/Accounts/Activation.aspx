@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Activation.aspx.cs" Inherits="TestProject.Activation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Activation.aspx.cs" Inherits="TestProject.Accounts.Activation" %>
 
 <!DOCTYPE html>
 

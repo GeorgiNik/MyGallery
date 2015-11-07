@@ -8,18 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyGalleryWindowsService.GalleryServiceReference {
-    using System.Runtime.Serialization;
+namespace MyGalleryWindowsService.Service_References.GalleryServiceReference {
     using System;
-    
-    
+    using System.Runtime.Serialization;
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Size", Namespace="http://schemas.datacontract.org/2004/07/System.Drawing")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Size", Namespace="http://schemas.datacontract.org/2004/07/System.Drawing")]
+    [Serializable()]
     public partial struct Size : System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private int heightField;
@@ -35,7 +34,7 @@ namespace MyGalleryWindowsService.GalleryServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int height {
             get {
                 return this.heightField;
@@ -48,7 +47,7 @@ namespace MyGalleryWindowsService.GalleryServiceReference {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int width {
             get {
                 return this.widthField;
@@ -154,10 +153,10 @@ namespace MyGalleryWindowsService.GalleryServiceReference {
         System.Threading.Tasks.Task<int> ActivateAccAsync(string activationCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyGalleryProvider/GenerateAndInsertThumbnail", ReplyAction="http://tempuri.org/IMyGalleryProvider/GenerateAndInsertThumbnailResponse")]
-        void GenerateAndInsertThumbnail(Model.Photo photo, MyGalleryWindowsService.GalleryServiceReference.Size thumbSize);
+        void GenerateAndInsertThumbnail(Model.Photo photo, Size thumbSize);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyGalleryProvider/GenerateAndInsertThumbnail", ReplyAction="http://tempuri.org/IMyGalleryProvider/GenerateAndInsertThumbnailResponse")]
-        System.Threading.Tasks.Task GenerateAndInsertThumbnailAsync(Model.Photo photo, MyGalleryWindowsService.GalleryServiceReference.Size thumbSize);
+        System.Threading.Tasks.Task GenerateAndInsertThumbnailAsync(Model.Photo photo, Size thumbSize);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyGalleryProvider/PhotosWithoutThumb", ReplyAction="http://tempuri.org/IMyGalleryProvider/PhotosWithoutThumbResponse")]
         Model.Photo[] PhotosWithoutThumb();
@@ -167,12 +166,12 @@ namespace MyGalleryWindowsService.GalleryServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMyGalleryProviderChannel : MyGalleryWindowsService.GalleryServiceReference.IMyGalleryProvider, System.ServiceModel.IClientChannel {
+    public interface IMyGalleryProviderChannel : IMyGalleryProvider, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MyGalleryProviderClient : System.ServiceModel.ClientBase<MyGalleryWindowsService.GalleryServiceReference.IMyGalleryProvider>, MyGalleryWindowsService.GalleryServiceReference.IMyGalleryProvider {
+    public partial class MyGalleryProviderClient : System.ServiceModel.ClientBase<IMyGalleryProvider>, IMyGalleryProvider {
         
         public MyGalleryProviderClient() {
         }
@@ -297,11 +296,11 @@ namespace MyGalleryWindowsService.GalleryServiceReference {
             return base.Channel.ActivateAccAsync(activationCode);
         }
         
-        public void GenerateAndInsertThumbnail(Model.Photo photo, MyGalleryWindowsService.GalleryServiceReference.Size thumbSize) {
+        public void GenerateAndInsertThumbnail(Model.Photo photo, Size thumbSize) {
             base.Channel.GenerateAndInsertThumbnail(photo, thumbSize);
         }
         
-        public System.Threading.Tasks.Task GenerateAndInsertThumbnailAsync(Model.Photo photo, MyGalleryWindowsService.GalleryServiceReference.Size thumbSize) {
+        public System.Threading.Tasks.Task GenerateAndInsertThumbnailAsync(Model.Photo photo, Size thumbSize) {
             return base.Channel.GenerateAndInsertThumbnailAsync(photo, thumbSize);
         }
         
